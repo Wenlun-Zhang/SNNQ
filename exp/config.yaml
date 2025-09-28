@@ -1,0 +1,15 @@
+w_qconfig:
+    quantizer: AdaRoundFakeQuantize
+    observer: MSEObserver
+    bit: 2
+    symmetric: True
+    ch_axis: 0
+calibrate: 1024
+recon:
+    batch_size: 32
+    warm_up: 0.2
+    weight: 0.01
+    iters: 20000
+    b_range: [20, 2]
+    keep_gpu: True
+    round_mode: learned_hard_sigmoid
